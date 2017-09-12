@@ -40,7 +40,7 @@
 					</div>
 					  <p id="back-top"><a href="#top"><span><?php echo $this->__('Top') ?></span></a> </p>
 					  <div class="footer-cols-wrapper">
-						<div class="footer-col">			
+						<div class="footer-col">
 							<h4><?php echo $this->__('Information') ?></h4>
 							<div class="footer-col-content">
 								<?php echo $this->getChildHtml('cms_footer_links') ?>
@@ -56,11 +56,6 @@
 						<address><?php echo $this->getCopyright() ?></address>
 						<div class="clear"></div>
 						<?php echo $this->getChildHtml('store_switcher') ?>
-							<?php $current_page = Mage::app()->getFrontController()->getRequest()->getRouteName(); 
-								if ($current_page == 'cms'):
-									echo 'More <a rel="nofollow" href="http://www.templatemonster.com/category.php?category=225&type=27" target="_blank">Apparel Templates at TemplateMonster.com</a>';
-								endif;
-							?>
 					</div>
 				</div>
 			</div>
