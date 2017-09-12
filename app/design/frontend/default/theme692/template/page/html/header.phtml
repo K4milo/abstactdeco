@@ -37,9 +37,9 @@
         <?php echo $this->getChildHtml('store_language_2') ?>
         <?php echo $this->getChildHtml('footer_links') ?>
         <?php echo $this->getChildHtml('cms_footer_links') ?>
-        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('cms_footer_links')->toHtml() ?>   
-        <div class="footer-links-menu"> 
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml() ?>  
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('cms_footer_links')->toHtml() ?>
+        <div class="footer-links-menu">
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml() ?>
             <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/template/custum_link_header.phtml')->toHtml(); ?>
         </div>
     </div>
@@ -54,38 +54,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-                <div class="header">
-                        <div class="header-border">
-                            <div class="header-buttons">
-                                <?php echo $this->getChildHtml('store_language') ?>
-                                <?php echo $this->getChildHtml('currency') ?>     
-                            </div>
-                            <?php echo ($this->getLayout()->createBlock('cms/block')->setBlockId('header_info')->toHtml()); ?>
-                            <div class="clear"></div>
-                        </div>
-
-                        <div class="skip-links"> <span href="#header-account" class="skip-link skip-account"></span></div>
-                        <div id="header-account" class="skip-content"></div>
-                       
-                        <?php if ($this->getIsHomePage()):?>
-                        <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
-                        <?php else:?>
-                            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-                        <?php endif?>
-                        <?php echo $this->getChildHtml('cart_header'); ?>
-                        <div class="f-right">
-                            <div class="quick-access">
-                                <?php echo $this->getChildHtml('topLinks') ?>
-                            </div>  
-                            <p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
-                            <!-- <div class="skip-links-relative">
-                                <?php // echo $this->getLayout()->createBlock('core/template')->setTemplate('page/template/custum_link_header_2.phtml')->toHtml(); ?>
-                            </div> -->
-                            <?php echo $this->getChildHtml('topSearch') ?>
-                        </div>
-                        <div class="clear"></div>
-                </div>
-            </div>
+          <div class="header">
+              <div class="header-border">
+                  <div class="header-buttons">
+                      <?php echo $this->getChildHtml('store_language') ?>
+                      <?php echo $this->getChildHtml('currency') ?>
+                      <?php echo $this->getChildHtml('cart_header'); ?>
+                      <?php echo $this->getChildHtml('topLinks') ?>
+                      <p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+                  </div>
+                  <?php echo ($this->getLayout()->createBlock('cms/block')->setBlockId('header_info')->toHtml()); ?>
+                  <div class="clear"></div>
+              </div>
+          </div>
+      </div>
 		</div>
 		<div class="clear"></div>
 	</div>

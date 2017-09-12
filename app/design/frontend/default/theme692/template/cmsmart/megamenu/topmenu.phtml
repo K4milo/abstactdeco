@@ -1,7 +1,7 @@
 <?php
 /*
 * Name Extension: Cmsmart megamenu
-* Author: The Cmsmart Development Team 
+* Author: The Cmsmart Development Team
 * Date Created: 06/09/2013
 * Websites: http://cmsmart.net
 * Technical Support: Forum - http://cmsmart.net/support
@@ -29,15 +29,20 @@
 
 <?php
 	$theme = $this->helper('megamenu');
-	
+
 ?>
 <div class="nav-container">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
 	            <!-- <div class="nav" style="width: <?php // echo $theme->getCfg('mainmenu/width_menu').'px' ?>;"> -->
+							<?php if ($this->getIsHomePage()):?>
+							<h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+							<?php else:?>
+									<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+							<?php endif?>
                 <div class="nav">
-                    <ul id="nav" class="grid-full"> 
+                    <ul id="nav" class="grid-full">
                             <?php //Display "Home" link, if enabled ?>
                             <?php if ($theme->getCfg('mainmenu/home')): ?>
                                 <li id="nav-home-link" class="level <?php if (Mage::helper('core/url')->getCurrentUrl() === Mage::helper('core/url')->getHomeUrl()):?> active<?php endif;?>">
@@ -48,7 +53,8 @@
                                     <?php endif; ?>
                                 </li>
                             <?php endif; ?>
-                    
+
+
                             <?php echo $_menu;?>
                             <?php if ($tmpHtml = $this->getChildHtml('block_header_nav_dropdown')): ?>
                                 <li class="nav-custom-link level0 level-top parent<?php if ($theme->getCfg('mainmenu/custom_block_floating')) echo ' f-right'; ?>">
@@ -64,9 +70,10 @@
                                     </ul>
                                 </li>
                             <?php endif; ?>
-                            
+
                             <li><?php echo $this->getChildHtml('block_header_nav_share'); ?></li>
                      </ul>
+										 <?php echo $this->getChildHtml('topSearch') ?>
                 </div>
             </div>
         </div>
