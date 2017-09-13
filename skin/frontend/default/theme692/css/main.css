@@ -2410,7 +2410,9 @@ body .nav-container {
       vertical-align: middle; }
       body .nav-container .nav li a,
       body .nav-container ul li a {
-        color: #ffffff; }
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: bold; }
 
 /*----------------------------------------
 SLIDER
@@ -2440,7 +2442,7 @@ HOME
 ----------------------------------------*/
 html {
   height: 100%; }
-  html body .main-container {
+  html body.cms-home .main-container {
     background-color: #000000;
     color: #ffffff; }
   html body .row-cat li {

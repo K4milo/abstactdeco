@@ -4,12 +4,12 @@ HOME
 html{
 	height:100%;
 	body {
-		.main-container{
-			background-color: $black;
-			color: $white;
-			
+		&.cms-home {
+			.main-container{
+				background-color: $black;
+				color: $white;
+			}
 		}
-
 		//Categories
 		.row-cat {
 			li {
@@ -30,7 +30,7 @@ html{
 				}
 			}
 		}
-		//VIdeo 
+		//VIdeo
 		.box-1{
 			position: relative;
 			z-index: 1;

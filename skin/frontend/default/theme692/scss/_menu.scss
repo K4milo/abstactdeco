@@ -19,7 +19,7 @@ body{
 			background-image: url(../images/logo.png);
 		}
 
-		.nav, 
+		.nav,
 		ul {
 			float: none;
 			display: inline-block;
@@ -30,6 +30,8 @@ body{
 				vertical-align: middle;
 				a {
 					color: $white;
+					font-size: 14px;
+					font-weight: bold;
 				}
 			}
 		}
