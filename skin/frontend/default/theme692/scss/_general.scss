@@ -1,0 +1,77 @@
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body,html{
+	font-family: 'Montserrat', sans-serif;
+}
+//mixins
+@mixin afterTitle($color){
+	&::after{
+		content: "";
+		display: block;
+		width: 60px;
+		height: 4px;
+		margin: 15px auto;
+		background-color: $color;
+	}
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin FA ($cont){
+  content: $cont;
+  font-family: 'FontAwesome';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  line-height: 1;
+}
+
+//media queries
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$sm-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin bdesktop {
+  @media (min-width: #{$big-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin defdesktop {
+  @media (max-width: #{$big-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin smdesktop {
+  @media (max-width: #{$desktop-width + 2}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin iphoneV {
+  @media (max-width: 323px) {
+    @content;
+  }
+}

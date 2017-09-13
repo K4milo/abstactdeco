@@ -1,0 +1,60 @@
+/*----------------------------------------
+HEADER
+----------------------------------------*/
+body {
+	.header-container {
+		background-color: $cyan;
+		padding: 0;
+		box-shadow: none;
+		.header {
+			color: $dblue;
+			display: block;
+			.welcome-msg {
+				display: inline-block;
+				float: none;
+				color: $dblue;
+			}
+			//side Buttons
+			.header-buttons {
+				.links{
+					display: inline-block;
+					li{
+						float: none;
+						display: inline-block !important;
+						margin: 0 10px !important;
+						font-weight: bold;
+						a {
+							color: $dblue;
+							&.top-link-cart {
+								display: block;
+							}
+						}
+					}
+				}
+
+				.block-cart-header {
+					background: none;
+					width: auto;
+					height: auto;
+					float: none;
+					display: inline-block;
+					.summary {
+						display: none;
+					}
+					.mini-cart {
+						display: block;
+						&::before {
+							@include FA("\f07a");
+							font-size: 1.3em;
+							margin-right: 1.3em;
+						}
+					}
+				}
+			}
+			.header-border {
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+}

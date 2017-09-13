@@ -1,0 +1,37 @@
+/*----------------------------------------
+MENU
+----------------------------------------*/
+body{
+	.nav-container {
+		position: relative;
+		border: none;
+		background-color: $black;
+		transition: all .4s;
+		&.fixed{
+			background-color: $opBlack;
+		}
+		.logo {
+			display: inline-block;
+			width: 202px;
+			height: 64px;
+			vertical-align: middle;
+			margin-top: 12px;
+			background-image: url(../images/logo.png);
+		}
+
+		.nav, 
+		ul {
+			float: none;
+			display: inline-block;
+			vertical-align: middle;
+			li {
+				float: none;
+				display: inline-block;
+				vertical-align: middle;
+				a {
+					color: $white;
+				}
+			}
+		}
+	}
+}

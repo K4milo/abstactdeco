@@ -1,0 +1,36 @@
+/*----------------------------------------
+SLIDER
+----------------------------------------*/
+body {
+	.fluid_container_wrap {
+		margin-top: 0;
+		padding: 0;
+		.camera_caption {
+			width: 60%;
+			max-width: 700px;
+			& > div {
+				
+				& > div {
+					background-color: $purple;
+					display: inline-block;
+					padding: 5px;
+					color: $white; 
+				}
+
+				.camera-link {
+					display: block;
+					max-width: 150px;
+					background-color: $cyan;
+				}
+
+				.lof_camera_title {
+					font-size: 60px;
+				}
+				
+				.lof_camera_title1 {
+					font-size: 40px;
+				}
+			}
+		}
+	}
+}

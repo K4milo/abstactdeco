@@ -4,6 +4,8 @@
 
 /app/etc/local.xml
 
+node_modules
+
 /media/*
 !/media/.htaccess
 
