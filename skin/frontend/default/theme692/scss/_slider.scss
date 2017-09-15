@@ -9,12 +9,12 @@ body {
 			width: 60%;
 			max-width: 700px;
 			& > div {
-				
+
 				& > div {
 					background-color: $purple;
 					display: inline-block;
 					padding: 5px;
-					color: $white; 
+					color: $white;
 				}
 
 				.camera-link {
@@ -25,10 +25,16 @@ body {
 
 				.lof_camera_title {
 					font-size: 60px;
+					@include mobile {
+						font-size: 20px;
+					}
 				}
-				
+
 				.lof_camera_title1 {
 					font-size: 40px;
+					@include mobile {
+						font-size: 16px;
+					}
 				}
 			}
 		}

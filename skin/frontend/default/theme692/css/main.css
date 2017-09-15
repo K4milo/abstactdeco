@@ -5,7 +5,7 @@
  */
 /* FONT PATH
  * -------------------------- */
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 @font-face {
   font-family: 'FontAwesome';
   src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
@@ -2330,7 +2330,7 @@
   clip: auto; }
 
 body, html {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Roboto', sans-serif; }
 
 /*----------------------------------------
 HEADER
@@ -2389,8 +2389,6 @@ body .nav-container {
   border: none;
   background-color: #000000;
   transition: all .4s; }
-  body .nav-container.fixed {
-    background-color: rgba(0, 0, 0, 0.5); }
   body .nav-container .logo {
     display: inline-block;
     width: 202px;
@@ -2434,8 +2432,14 @@ body .fluid_container_wrap {
       background-color: #04f6fe; }
     body .fluid_container_wrap .camera_caption > div .lof_camera_title {
       font-size: 60px; }
+      @media (max-width: 767px) {
+        body .fluid_container_wrap .camera_caption > div .lof_camera_title {
+          font-size: 20px; } }
     body .fluid_container_wrap .camera_caption > div .lof_camera_title1 {
       font-size: 40px; }
+      @media (max-width: 767px) {
+        body .fluid_container_wrap .camera_caption > div .lof_camera_title1 {
+          font-size: 16px; } }
 
 /*----------------------------------------
 HOME
@@ -2477,9 +2481,16 @@ html {
       html body .box-1 .container .col-xs-12 {
         max-width: 700px; }
         html body .box-1 .container .col-xs-12 .title-row {
-          font-size: 80px; }
+          font-size: 80px;
+          line-height: 1; }
+          @media (max-width: 767px) {
+            html body .box-1 .container .col-xs-12 .title-row {
+              font-size: 20px; } }
         html body .box-1 .container .col-xs-12 .desc-row {
           font-size: 65px; }
+          @media (max-width: 767px) {
+            html body .box-1 .container .col-xs-12 .desc-row {
+              font-size: 16px; } }
         html body .box-1 .container .col-xs-12 .btn-row {
           display: block; }
           html body .box-1 .container .col-xs-12 .btn-row span {
@@ -2529,3 +2540,5 @@ CONTACT
 /*----------------------------------------
 Footer
 ----------------------------------------*/
+.footer .footer-col {
+  width: 20%; }
