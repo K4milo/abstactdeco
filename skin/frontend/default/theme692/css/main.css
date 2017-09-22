@@ -2331,6 +2331,9 @@
 
 body, html {
   font-family: 'Roboto', sans-serif; }
+  body .containerr, html .containerr {
+    max-width: 1200px;
+    margin: 0 auto; }
 
 /*----------------------------------------
 HEADER
@@ -2398,7 +2401,7 @@ body .nav-container {
     background-image: url(../images/logo.png); }
   body .nav-container .nav,
   body .nav-container ul {
-    float: none;
+    float: right;
     display: inline-block;
     vertical-align: middle; }
     body .nav-container .nav li,
@@ -2449,6 +2452,8 @@ html {
   html body.cms-home .main-container {
     background-color: #000000;
     color: #ffffff; }
+  html body.cms-home .containerr {
+    max-width: 100%; }
   html body .row-cat li {
     position: relative; }
     html body .row-cat li img {

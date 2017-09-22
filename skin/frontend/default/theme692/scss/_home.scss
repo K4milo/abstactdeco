@@ -9,6 +9,10 @@ html{
 				background-color: $black;
 				color: $white;
 			}
+			//Curstom home container
+			.containerr{
+				max-width: 100%;
+			}
 		}
 		//Categories
 		.row-cat {
@@ -129,5 +133,12 @@ html{
 				}
 			}
 		}
+	}
+}
+
+//Home product
+body {
+	&.catalog-product-view {
+		
 	}
 }
