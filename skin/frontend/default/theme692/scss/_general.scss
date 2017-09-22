@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 body,html{
 	font-family: 'Montserrat', sans-serif;
+  .containerr {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
 //mixins
 @mixin afterTitle($color){
