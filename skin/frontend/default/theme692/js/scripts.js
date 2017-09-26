@@ -1,3 +1,39 @@
+//Custom scripts
+
+(function($){
+var selected = $('select');
+
+	selected.each(function(index){
+
+		var $this = $(this);
+
+		$this.on('change', function (e) {
+	        var optionSelected = $("option:selected", this).text(),
+	            optionValue = $("option:selected", this).val();
+
+	        if(optionSelected == 'Lamina ' || optionSelected == 'Cuadro '){
+				$this.parent().addClass('type-poster');
+			}
+	    });
+
+	});
+
+	// New context
+
+	var newType = $('.type-poster select');
+
+	newType.on('change', function (e) {
+        var optionSelected = $("option:selected", this).text(),
+            optionValue = $("option:selected", this).val();
+
+        if(optionSelected == 'Lamina '){
+			//$this.parent().addClass('type-poster');
+		}
+    });
+
+})(jQuery);
+
+
 jQuery(document).ready(function(){
 	var topControlIcon = jQuery ('.top-icon-menu, .shadow, .block-cart-header, .top-search, .page, body, .header-button');
 
