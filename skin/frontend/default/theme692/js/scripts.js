@@ -1,39 +1,4 @@
 //Custom scripts
-
-(function($){
-var selected = $('select');
-
-	selected.each(function(index){
-
-		var $this = $(this);
-
-		$this.on('change', function (e) {
-	        var optionSelected = $("option:selected", this).text(),
-	            optionValue = $("option:selected", this).val();
-
-	        if(optionSelected == 'Lamina ' || optionSelected == 'Cuadro '){
-				$this.parent().addClass('type-poster');
-			}
-	    });
-
-	});
-
-	// New context
-
-	var newType = $('.type-poster select');
-
-	newType.on('change', function (e) {
-        var optionSelected = $("option:selected", this).text(),
-            optionValue = $("option:selected", this).val();
-
-        if(optionSelected == 'Lamina '){
-			//$this.parent().addClass('type-poster');
-		}
-    });
-
-})(jQuery);
-
-
 jQuery(document).ready(function(){
 	var topControlIcon = jQuery ('.top-icon-menu, .shadow, .block-cart-header, .top-search, .page, body, .header-button');
 
@@ -44,6 +9,80 @@ jQuery(document).ready(function(){
  	else {
   		jQuery(".sidebar .block-slider-sidebar").addClass('block-slider-start');
   	};
+
+
+  	var selected = jQuery('.product-options select'),
+  		dt_items = jQuery('.product-options dt');
+
+
+
+
+	//Assign class acoording labels
+	dt_items.each(function(index, el) {
+		var $this = jQuery(this),
+			$theLabels = $this.find('label').text();
+
+			if($theLabels == "*Medidas Laminas"){
+				$this.addClass('label-laminas');
+				$this.next().addClass("laminas-input");
+			} else if($theLabels == "*Medidas Cuadros"){
+				$this.addClass('label-cuadros');
+				$this.next().addClass("cuadros-input");
+			} else if($theLabels == "*Color de Cuadro"){
+				$this.addClass('label-cuadros');
+				$this.next().addClass("cuadros-input");
+			}
+	});
+
+	//generate new containers
+	jQuery('.label-cuadros, .cuadros-input').wrapAll('<div class="container-cuadros"></div>');
+	jQuery('.label-laminas, .laminas-input').wrapAll('<div class="container-laminas"></div>');
+
+	// New context
+
+	selected.each(function(index){
+
+		var $this = jQuery(this);
+
+		$this.on('change', function (e) {
+	        var optionSelected = jQuery("option:selected", this).text(),
+	            optionValue = jQuery("option:selected", this).val(),
+	            cuadrosValue = jQuery('.cuadros-input select'),
+            	laminasValue = jQuery('.laminas-input select');
+
+	        if(optionSelected == 'Lamina '){
+				jQuery('.container-laminas').show(300);
+				jQuery('.container-cuadros').hide(300);
+				//find all cuadros input
+				jQuery('.cuadros-input').each(function(index, el) {
+					jQuery(this).find('select option:eq(1)').attr('selected', true);
+				});
+
+			} else if(optionSelected == 'Cuadro '){
+				jQuery('.container-cuadros').show(300);
+				jQuery('.container-laminas').hide(300);
+				laminasValue.children('option:eq(1)').attr('selected', true);
+			} else if(optionSelected == 'Madera '){
+				jQuery('.product-image').removeClass('black');
+				jQuery('.product-image').removeClass('wood');
+				jQuery('.product-image').addClass('wood');
+			} else if(optionSelected == 'Negro '){
+				jQuery('.product-image').removeClass('wood');
+				jQuery('.product-image').removeClass('black');
+				jQuery('.product-image').addClass('black');
+			}  else if(optionSelected == 'Blanco '){
+				jQuery('.product-image').removeClass('wood');
+				jQuery('.product-image').removeClass('black');
+			}  
+	    });
+
+	});
+
+	setTimeout(function(){
+		jQuery('.container-cuadros, .container-laminas').hide();
+		jQuery('.cuadros-input select').children('option:eq(1)').attr('selected', true);
+		jQuery('.laminas-input select').children('option:eq(1)').attr('selected', true);
+	},200);
 
 	/*************************************************************** Superfish Menu *********************************************************************/
 	/* toggle nav */

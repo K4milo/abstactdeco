@@ -2536,6 +2536,13 @@ html {
     html body .parallax.cyan::after {
       background-color: #04f6fe; }
 
+body.catalog-product-view .product-view .product-img-box .product-box-customs .product-image {
+  border: none; }
+  body.catalog-product-view .product-view .product-img-box .product-box-customs .product-image.wood img {
+    border: 5px solid #a07730; }
+  body.catalog-product-view .product-view .product-img-box .product-box-customs .product-image.black img {
+    border: 5px solid #000000; }
+
 /*----------------------------------------
 Forms
 ----------------------------------------*/

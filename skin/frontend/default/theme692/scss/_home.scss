@@ -139,6 +139,24 @@ html{
 //Home product
 body {
 	&.catalog-product-view {
-		
+		.product-view {
+			.product-img-box {
+				.product-box-customs {
+					.product-image {
+						border: none;
+						&.wood{
+							img {
+								border: 5px solid $wood;
+							}
+						}
+						&.black{
+							img {
+								border: 5px solid $black;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
