@@ -1,0 +1,25 @@
+//sidebar
+.col-left{
+	&.sidebar {
+		//Categories block
+		.block-categories {
+			dl {
+				dt {
+					text-transform: uppercase;
+				}
+				dd{
+					display: none;
+					ol {
+						li {
+							padding: 0.5em 1em;
+							border-bottom: 1px solid $lgrey;
+							a {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
