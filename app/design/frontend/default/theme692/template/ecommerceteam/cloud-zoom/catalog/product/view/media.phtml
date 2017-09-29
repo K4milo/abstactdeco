@@ -76,7 +76,7 @@ if ($zoomHeight) {
     <p class="product-image">
         <a  href='<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($bigImageWidth, $bigImageHeight);?>' class = 'cloud-zoom' id='zoom1' rel="<?php echo implode($config, ',');?>">
             
-            <img class="big" id="image" src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($bigImageX, $bigImageY);?>" alt='' title="<?php echo $this->htmlEscape($this->getImageLabel());?>" />
+            <img class="big" id="image" src="<?php echo $this->helper('catalog/image')->init($product, 'image');?>" alt='' title="<?php echo $this->htmlEscape($this->getImageLabel());?>" />
         </a>
     </p>
     <?php else: ?>

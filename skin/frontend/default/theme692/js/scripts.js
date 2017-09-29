@@ -53,15 +53,19 @@ jQuery(document).ready(function(){
 	        if(optionSelected == 'Lamina '){
 				jQuery('.container-laminas').show(300);
 				jQuery('.container-cuadros').hide(300);
+				jQuery('.product-image').removeClass('wood');
+				jQuery('.product-image').removeClass('black');
 				//find all cuadros input
 				jQuery('.cuadros-input').each(function(index, el) {
 					jQuery(this).find('select option:eq(1)').attr('selected', true);
+					jQuery(this).find('select option:eq(1)').hide();
 				});
 
 			} else if(optionSelected == 'Cuadro '){
 				jQuery('.container-cuadros').show(300);
 				jQuery('.container-laminas').hide(300);
 				laminasValue.children('option:eq(1)').attr('selected', true);
+				laminasValue.children('option:eq(1)').hide();
 			} else if(optionSelected == 'Madera '){
 				jQuery('.product-image').removeClass('black');
 				jQuery('.product-image').removeClass('wood');
@@ -83,6 +87,22 @@ jQuery(document).ready(function(){
 		jQuery('.cuadros-input select').children('option:eq(1)').attr('selected', true);
 		jQuery('.laminas-input select').children('option:eq(1)').attr('selected', true);
 	},200);
+
+	//Toggle categories on sidebar
+
+	var togSidebar = jQuery('.col-left.sidebar .block-categories dl');
+
+		togSidebar.each(function(index,e){
+
+			var $this = jQuery(this),
+				$clickeable = $this.find('dt');
+
+				$clickeable.click(function(e){
+					e.preventDefault();
+					jQuery(this).next('dd').slideToggle(400);
+				});
+
+		});
 
 	/*************************************************************** Superfish Menu *********************************************************************/
 	/* toggle nav */
