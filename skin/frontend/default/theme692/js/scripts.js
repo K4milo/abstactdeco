@@ -58,14 +58,26 @@ jQuery(document).ready(function(){
 				//find all cuadros input
 				jQuery('.cuadros-input').each(function(index, el) {
 					jQuery(this).find('select option:eq(1)').attr('selected', true);
-					jQuery(this).find('select option:eq(1)').hide();
+				});
+
+				jQuery('.laminas-input').each(function(index, el) {
+					jQuery(this).find('select option:eq(0)').attr('selected', true);
 				});
 
 			} else if(optionSelected == 'Cuadro '){
 				jQuery('.container-cuadros').show(300);
 				jQuery('.container-laminas').hide(300);
-				laminasValue.children('option:eq(1)').attr('selected', true);
-				laminasValue.children('option:eq(1)').hide();
+
+				//find all cuadros input
+				jQuery('.laminas-input').each(function(index, el) {
+					jQuery(this).find('select option:eq(1)').attr('selected', true);
+				});
+
+				jQuery('.cuadros-input').each(function(index, el) {
+					jQuery(this).find('select option:eq(0)').attr('selected', true);
+				});
+
+
 			} else if(optionSelected == 'Madera '){
 				jQuery('.product-image').removeClass('black');
 				jQuery('.product-image').removeClass('wood');
@@ -84,9 +96,21 @@ jQuery(document).ready(function(){
 
 	setTimeout(function(){
 		jQuery('.container-cuadros, .container-laminas').hide();
-		jQuery('.cuadros-input select').children('option:eq(1)').attr('selected', true);
-		jQuery('.laminas-input select').children('option:eq(1)').attr('selected', true);
+
 	},200);
+
+	setTimeout(function(){
+
+		//fix price
+		jQuery('.price').each(function(index, el) {
+			$this = jQuery(this);
+
+			$this.html(function(_,txt) {
+		    	return txt.replace(/(.$)/, "<b>$1</b>");
+			});
+		});
+
+	},900);
 
 	//Toggle categories on sidebar
 
