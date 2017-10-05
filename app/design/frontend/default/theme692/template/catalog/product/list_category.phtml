@@ -1,0 +1,84 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ */
+?>
+<?php
+/**
+ * Product list category template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+<?php
+
+$categoryid = $this->getCategoryIds();
+
+$category = new Mage_Catalog_Model_Category();
+$category->load($categoryid);
+$collection = $category->getProductCollection();
+$collection->addAttributeToSelect('*');
+
+?>
+<div class="carousel-container">
+    <ul class="products-grid new_triger slider-carousel">
+
+        <?php
+        foreach ($collection as $_product) { ?>
+
+            <li class="item product">
+                <div class="wrapper-hover">
+                    <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image noSwipe" itemprop="url">
+                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(250, 383); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" itemprop="image"/>
+                    </a>
+                    <div class="product-shop">
+                        <?php echo $this->getPriceHtml($_product, true, '-new') ?>
+                        <h3 class="product-name">
+                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" itemprop="name">
+                                <?php $small_getName = strip_tags($this->htmlEscape($_product->getName()));
+                                 if (strlen($small_getName) < 20) echo($small_getName);
+                                 else { echo mb_substr($small_getName, 0, 20,'UTF-8').'...';} ?>
+                            </a>
+                        </h3> 
+                        <div class="desc_grid"><?php $small_getDescription = strip_tags($_product->getShortDescription());
+                             if (strlen($small_getDescription) < 80) echo($small_getDescription);
+                             else { echo mb_substr($small_getDescription, 0, 80,'UTF-8').'...';} ?>
+                         </div>
+                        <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                        <div class="actions noSwipe">
+                            <?php if($_product->isSaleable()): ?>
+                                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button noSwipe btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                            <?php else: ?>
+                                <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                            <?php endif; ?>
+                            <ul class="add-to-links">
+                                <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                    <li><a href="<?php echo $this->getAddToWishlistUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+                                <?php endif; ?>
+                                <?php if ($_compareUrl = $this->getAddToCompareUrl($_product)): ?>
+                                    <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <?php $_product = Mage::getModel('catalog/product')->load($_product->getId()); ?>
+                    <div class="label-product">             
+                        <?php if($_product->getData('new')){echo '<span class="new">'.$this->__('New').'</span>';  }?>
+                        <?php if($_product->getData('sale')){echo '<span class="sale">'.$this->__('Sale').'</span>';  }?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </li>
+
+        <?php } ?>
+
+    </ul>
+    <div class="home-carousel-control">
+        <a class="carousel-prev fa fa-chevron-left" href="#"></a>
+        <a class="carousel-next fa fa-chevron-right" href="#"></a>
+    </div>
+    <div class="pagination" id="foo2_pag"></div>
+</div>
