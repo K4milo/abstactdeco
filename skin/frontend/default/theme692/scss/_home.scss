@@ -82,6 +82,91 @@ html{
 			}
 		}
 
+		//Carousel
+		.slider-categories {
+			position: relative;
+			min-height: 500px;
+			padding: 6em 0;
+			background-size: cover;
+			background-attachment: fixed;
+			.side-txt{
+				position: relative;
+				z-index: 3;
+				display: inline-block;
+				padding: 0 0 0 5%;
+				width: 20%;
+				h2 {
+					font-weight: bold;
+					font-size: 3em;
+				}
+				a {
+					display: inline-block;
+					margin-top: 1em;
+					color: $white;
+					background-color: #303c4b;
+					padding: 1em;
+					position: relative;
+					font-weight: bold;
+					font-size: 1.5em;
+					transition: all 0.4s ease 0s;
+					&:hover{
+						background: $lblue;
+					}
+				}
+			}
+			.carousel-container{
+				position: relative;
+				z-index: 3;
+				display: inline-block;
+				vertical-align: middle;
+				width: 73%;
+				li{
+					.product-shop{
+						text-align: center;
+						width: 100%;
+					}
+					span{
+						display: inline-block;
+					}
+					.actions {
+						ul,button{
+							float: none;
+							display: inline-block;
+							vertical-align: top;
+							margin-top: 0;
+							span {
+								> span{
+									display: none;
+								}
+							}
+							li {
+								display: inline-block;
+								vertical-align: top;
+								.separator {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
+			.home-carousel-control{
+				top: -60px;
+				right: 30px;
+				a {
+					color: $white;
+					background-color: #303c4b;
+					padding: 1.5em;
+					position: relative;
+					font-weight: bold;
+					transition: all 0.4s ease 0s;
+					&:hover{
+						background: $lblue;
+					}
+				}
+			}
+		}
+
 		//Parallax
 		.parallax {
 			position: relative;

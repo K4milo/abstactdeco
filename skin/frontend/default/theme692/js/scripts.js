@@ -482,6 +482,36 @@ jQuery(document).ready(function() {
 	}
 
 		jQuery(function() {
+
+		//My carusel
+
+		jQuery('.slider-carousel').carouFredSel({
+			responsive: true,
+			width: '100%',
+			pagination    : "#foo2_pag",
+			prev: '.carousel-prev',
+			next: '.carousel-next',
+			scroll: 1,
+			auto	: {
+	    		play	: 1,
+		    	timeoutDuration :7000
+		    },
+			items: {
+				visible: {
+					min: 1,
+					max: 3
+				},
+				width:220,
+				height: 'variable'
+			},
+			mousewheel: true,
+			swipe: {
+				onMouse: false,
+				onTouch: true
+			}
+		});	
+
+
 		//	Scrolled by user interaction
 			if(jQuery(".up-sell-carousel").length){ 
 				jQuery('.up-sell-carousel').carouFredSel({

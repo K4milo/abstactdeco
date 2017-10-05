@@ -34,7 +34,10 @@
 <?php
     $_productCollection=$this->getLoadedProductCollection();
     $_helper = $this->helper('catalog/output');
+    $category_ids = $this->getCategoryIds();
 ?>
+
+<h1>Las Categorías que llegan son: <?php echo $category_ids;?></h1>
 
 <?php if(!$_productCollection->count()): ?>
     <div class="note-msg-empty-catalog">
@@ -44,7 +47,7 @@
         
     </div>
 <?php else: ?>
-    <div class="category-products">
+    <div class="category-products <?php echo $category_ids;?>">
     <?php echo $this->getToolbarHtml() ?>
     <?php // List mode ?>
     <?php if($this->getMode()!='grid'): ?>

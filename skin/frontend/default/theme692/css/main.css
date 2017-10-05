@@ -2514,6 +2514,68 @@ html {
           display: block; }
           html body .box-1 .container .col-xs-12 .btn-row span {
             padding: 1em; }
+  html body .slider-categories {
+    position: relative;
+    min-height: 500px;
+    padding: 6em 0;
+    background-size: cover;
+    background-attachment: fixed; }
+    html body .slider-categories .side-txt {
+      position: relative;
+      z-index: 3;
+      display: inline-block;
+      padding: 0 0 0 5%;
+      width: 20%; }
+      html body .slider-categories .side-txt h2 {
+        font-weight: bold;
+        font-size: 3em; }
+      html body .slider-categories .side-txt a {
+        display: inline-block;
+        margin-top: 1em;
+        color: #ffffff;
+        background-color: #303c4b;
+        padding: 1em;
+        position: relative;
+        font-weight: bold;
+        font-size: 1.5em;
+        transition: all 0.4s ease 0s; }
+        html body .slider-categories .side-txt a:hover {
+          background: #49c8f0; }
+    html body .slider-categories .carousel-container {
+      position: relative;
+      z-index: 3;
+      display: inline-block;
+      vertical-align: middle;
+      width: 73%; }
+      html body .slider-categories .carousel-container li .product-shop {
+        text-align: center;
+        width: 100%; }
+      html body .slider-categories .carousel-container li span {
+        display: inline-block; }
+      html body .slider-categories .carousel-container li .actions ul, html body .slider-categories .carousel-container li .actions button {
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 0; }
+        html body .slider-categories .carousel-container li .actions ul span > span, html body .slider-categories .carousel-container li .actions button span > span {
+          display: none; }
+        html body .slider-categories .carousel-container li .actions ul li, html body .slider-categories .carousel-container li .actions button li {
+          display: inline-block;
+          vertical-align: top; }
+          html body .slider-categories .carousel-container li .actions ul li .separator, html body .slider-categories .carousel-container li .actions button li .separator {
+            display: none; }
+    html body .slider-categories .home-carousel-control {
+      top: -60px;
+      right: 30px; }
+      html body .slider-categories .home-carousel-control a {
+        color: #ffffff;
+        background-color: #303c4b;
+        padding: 1.5em;
+        position: relative;
+        font-weight: bold;
+        transition: all 0.4s ease 0s; }
+        html body .slider-categories .home-carousel-control a:hover {
+          background: #49c8f0; }
   html body .parallax {
     position: relative;
     min-height: 500px;
