@@ -2470,15 +2470,23 @@ html {
     max-width: 100%; }
   html body .row-cat li {
     position: relative; }
+    @media (max-width: 767px) {
+      html body .row-cat li {
+        width: 100% !important; } }
     html body .row-cat li img {
       opacity: 0.6;
-      transition: all .3s; }
+      transition: all .3s;
+      width: 100%;
+      height: auto; }
     html body .row-cat li:hover img {
       opacity: 1; }
     html body .row-cat li .row-title {
       font-size: 40px;
       line-height: 1;
       letter-spacing: inherit; }
+      @media (max-width: 767px) {
+        html body .row-cat li .row-title {
+          font-size: 20px !important; } }
   html body .box-1 {
     position: relative;
     z-index: 1;
@@ -2520,6 +2528,20 @@ html {
     padding: 6em 0;
     background-size: cover;
     background-attachment: fixed; }
+    html body .slider-categories.bottom-home {
+      overflow: hidden; }
+      html body .slider-categories.bottom-home > div {
+        position: relative;
+        z-index: 3; }
+        html body .slider-categories.bottom-home > div .page-title h1 {
+          color: #ffffff; }
+        html body .slider-categories.bottom-home > div.the-home-form .contact-block #contactForm {
+          width: 100%; }
+          html body .slider-categories.bottom-home > div.the-home-form .contact-block #contactForm .form-list label,
+          html body .slider-categories.bottom-home > div.the-home-form .contact-block #contactForm h2 {
+            color: #ffffff; }
+        html body .slider-categories.bottom-home > div.the-home-form .contact-block .contact-left {
+          display: none; }
     html body .slider-categories::after {
       content: "";
       background-color: #000000;
@@ -2538,6 +2560,12 @@ html {
       display: inline-block;
       padding: 0 0 0 5%;
       width: 20%; }
+      @media (max-width: 767px) {
+        html body .slider-categories .side-txt {
+          width: 100%;
+          display: block;
+          padding: 1em 1em 2em;
+          display: block; } }
       html body .slider-categories .side-txt h2 {
         font-weight: bold;
         font-size: 3em; }
@@ -2559,6 +2587,22 @@ html {
       display: inline-block;
       vertical-align: middle;
       width: 73%; }
+      @media (max-width: 767px) {
+        html body .slider-categories .carousel-container {
+          width: 100%;
+          padding: 1em;
+          display: block; } }
+      @media (max-width: 767px) {
+        html body .slider-categories .carousel-container li .wrapper-hover > a {
+          max-width: 100%;
+          width: 100%;
+          float: none;
+          display: block;
+          margin: 0 auto; }
+          html body .slider-categories .carousel-container li .wrapper-hover > a img {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto; } }
       html body .slider-categories .carousel-container li .product-shop {
         text-align: center;
         width: 100%; }
@@ -2581,6 +2625,10 @@ html {
     html body .slider-categories .home-carousel-control {
       top: -60px;
       right: 30px; }
+      @media (max-width: 767px) {
+        html body .slider-categories .home-carousel-control {
+          top: -25px;
+          right: 10px; } }
       html body .slider-categories .home-carousel-control a {
         color: #ffffff;
         background-color: #303c4b;
@@ -2633,9 +2681,6 @@ html {
     html body .parallax.black::after {
       background-color: #000000; }
 
-body.catalog-product-view .more-views {
-  display: none; }
-
 body.catalog-product-view .product-view .product-img-box .product-box-customs .product-image {
   border: none; }
   body.catalog-product-view .product-view .product-img-box .product-box-customs .product-image img {
@@ -2656,5 +2701,15 @@ CONTACT
 /*----------------------------------------
 Footer
 ----------------------------------------*/
-.footer .footer-col {
+body .footer .footer-col {
   width: 20%; }
+  body .footer .footer-col .footer-top .list-icon {
+    text-align: center; }
+    body .footer .footer-col .footer-top .list-icon li {
+      display: inline-block;
+      margin-right: 40px; }
+      body .footer .footer-col .footer-top .list-icon li a {
+        font-size: 45px; }
+  @media (max-width: 767px) {
+    body .footer .footer-col {
+      width: 100%; } }

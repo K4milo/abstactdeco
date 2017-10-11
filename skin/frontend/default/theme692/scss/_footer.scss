@@ -1,8 +1,26 @@
 /*----------------------------------------
 Footer
 ----------------------------------------*/
-.footer {
-  .footer-col {
-    width: 20%;
-  }
+body {
+	.footer {
+	  .footer-col {
+	  	.footer-top{
+			.list-icon {
+				text-align: center;
+				 li {
+				 	display: inline-block;
+					margin-right: 40px;
+					a {
+						font-size: 45px;
+					}
+				}
+			}
+	  	}
+	    width: 20%;
+	    @include mobile {
+	    	width: 100%;
+	    }
+	  }
+	}
+
 }
