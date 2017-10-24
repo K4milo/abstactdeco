@@ -98,7 +98,7 @@ jQuery(document).ready(function(){
 		jQuery('.container-cuadros, .container-laminas').hide();
 
 	},200);
-
+	
 	//Toggle categories on sidebar
 
 	var togSidebar = jQuery('.col-left.sidebar .block-categories dl');
@@ -154,7 +154,7 @@ jQuery(document).ready(function(){
 		   truncateOptions();
 		});
 
-		jQuery(".price-box.map-info a, .tier-price a").click(function() { 
+		jQuery(".price-box.map-info a, .tier-price a").click(function() {
 	        jQuery(".map-popup").toggleClass("displayblock");
 	    });
 
@@ -406,11 +406,7 @@ jQuery(document).ready(function(){
   })
 
 }(jQuery);
-
-
 });
-
-
 
 /**********************************************************************back-top*****************************************************************************/
 jQuery(function () {
@@ -475,11 +471,17 @@ jQuery(document).ready(function() {
 		jQuery('.slider-carousel').carouFredSel({
 			responsive: true,
 			width: '100%',
-			pagination    : "#foo2_pag",
-			prev: '.carousel-prev',
-			next: '.carousel-next',
+			pagination:"#foo2_pag",
+			next:{
+				button: function() { var instance = jQuery(this).parent().parent().find(".home-carousel-control .carousel-next"); return instance},
+				key: 'right'
+			},
+			prev:{
+				button:function() { return jQuery(this).parent().parent().find(".home-carousel-control .carousel-prev")},
+				key: 'left'
+			},
 			scroll: 1,
-			auto	: {
+			auto: {
 	    		play	: 1,
 		    	timeoutDuration :7000
 		    },
@@ -488,12 +490,12 @@ jQuery(document).ready(function() {
 					min: 1,
 					max: 3
 				},
-				width:220,
+				width: 320,
 				height: 'variable'
 			},
 			mousewheel: true,
 			swipe: {
-				onMouse: false,
+				onMouse: true,
 				onTouch: true
 			}
 		});
