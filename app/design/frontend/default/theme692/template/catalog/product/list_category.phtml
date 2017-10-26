@@ -32,7 +32,7 @@ $collection->addAttributeToSelect('*');
             <li class="item product">
                 <div class="wrapper-hover">
                     <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image noSwipe" itemprop="url">
-                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(250, 383); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" itemprop="image"/>
+                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" itemprop="image"/>
                     </a>
                     <div class="product-shop">
                         <?php echo $this->getPriceHtml($_product, true, '-new') ?>
@@ -42,7 +42,7 @@ $collection->addAttributeToSelect('*');
                                  if (strlen($small_getName) < 20) echo($small_getName);
                                  else { echo mb_substr($small_getName, 0, 20,'UTF-8').'...';} ?>
                             </a>
-                        </h3> 
+                        </h3>
                         <div class="desc_grid"><?php $small_getDescription = strip_tags($_product->getShortDescription());
                              if (strlen($small_getDescription) < 80) echo($small_getDescription);
                              else { echo mb_substr($small_getDescription, 0, 80,'UTF-8').'...';} ?>
@@ -65,7 +65,7 @@ $collection->addAttributeToSelect('*');
                         </div>
                     </div>
                     <?php $_product = Mage::getModel('catalog/product')->load($_product->getId()); ?>
-                    <div class="label-product">             
+                    <div class="label-product">
                         <?php if($_product->getData('new')){echo '<span class="new">'.$this->__('New').'</span>';  }?>
                         <?php if($_product->getData('sale')){echo '<span class="sale">'.$this->__('Sale').'</span>';  }?>
                     </div>
