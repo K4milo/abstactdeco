@@ -2338,6 +2338,55 @@ body, html {
     float: left;
     font-weight: normal; }
 
+#overlay {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: 1s 0.4s; }
+
+#progress {
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  width: 0;
+  top: 50%; }
+
+#progstat {
+  font-size: 0.7em;
+  letter-spacing: 3px;
+  position: absolute;
+  top: 50%;
+  margin-top: -40px;
+  width: 100%;
+  text-align: center;
+  color: #fff; }
+
+body .widget.widget-viewed .products-grid li {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  float: none; }
+  body .widget.widget-viewed .products-grid li .product-image {
+    float: left; }
+  body .widget.widget-viewed .products-grid li .price-box {
+    margin: 0;
+    float: left;
+    width: 40%; }
+  body .widget.widget-viewed .products-grid li .actions {
+    clear: inherit; }
+    body .widget.widget-viewed .products-grid li .actions .button {
+      float: left; }
+    body .widget.widget-viewed .products-grid li .actions .add-to-links {
+      border-bottom: 0;
+      clear: none;
+      width: auto;
+      padding-top: 0;
+      border: none; }
+
 /*----------------------------------------
 HEADER
 ----------------------------------------*/
@@ -2603,6 +2652,17 @@ html {
             max-width: 100%;
             display: block;
             margin: 0 auto; } }
+      html body .slider-categories .carousel-container li .wrapper-hover .product-image {
+        background-color: transparent; }
+        html body .slider-categories .carousel-container li .wrapper-hover .product-image .inner-thumb {
+          display: block;
+          margin: 1em auto;
+          width: 90%;
+          height: 400px;
+          background-size: cover;
+          background-position: center center; }
+        html body .slider-categories .carousel-container li .wrapper-hover .product-image img {
+          display: none; }
       html body .slider-categories .carousel-container li .product-shop {
         text-align: center;
         width: 100%; }
@@ -2680,6 +2740,13 @@ html {
       background-color: #04f6fe; }
     html body .parallax.black::after {
       background-color: #000000; }
+
+body.catalog-product-view .the-ship-methods {
+  width: 350;
+  height: 100px;
+  margin: 1em 0 2em;
+  background-image: url("../images/logos.jpg");
+  background-repeat: no-repeat; }
 
 body.catalog-product-view .product-view .product-img-box .product-box-customs .product-image {
   border: none; }

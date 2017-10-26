@@ -183,6 +183,7 @@ html{
 					display: block;
 				}
 				li{
+				
 					.wrapper-hover {
 						> a {
 							@include mobile{
@@ -197,6 +198,23 @@ html{
 									margin: 0 auto;
 									
 								}
+							}
+						}
+
+						//thumb
+						.product-image {
+							background-color: transparent;
+							.inner-thumb {
+								display: block;
+								margin: 1em auto;
+								width: 90%;
+								height: 400px;
+								background-size: cover;
+								background-position: center center;
+							}
+
+							img {
+								display: none;
 							}
 						}
 					}
@@ -323,7 +341,14 @@ html{
 body {
 	&.catalog-product-view {
 		//Hide gallery
-		
+		//ship methods
+		.the-ship-methods {
+			width: 350;
+			height: 100px;
+			margin: 1em 0 2em;
+			background-image: url('../images/logos.jpg');
+			background-repeat: no-repeat;
+		}
 		.product-view {
 			.product-img-box {
 				.product-box-customs {

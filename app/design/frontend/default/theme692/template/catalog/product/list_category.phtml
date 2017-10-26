@@ -32,6 +32,9 @@ $collection->addAttributeToSelect('*');
             <li class="item product">
                 <div class="wrapper-hover">
                     <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image noSwipe" itemprop="url">
+                        
+                        <span class="inner-thumb" data-thumb="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"></span>
+
                         <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" itemprop="image"/>
                     </a>
                     <div class="product-shop">

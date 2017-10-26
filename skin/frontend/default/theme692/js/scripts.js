@@ -1,4 +1,41 @@
 //Custom scripts
+//preload
+;(function(){
+	function id(v){ return document.getElementById(v); }
+	function loadbar() {
+	var ovrl = id("overlay"),
+	    prog = id("progress"),
+	    stat = id("progstat"),
+	    img = document.images,
+	    c = 0,
+	    tot = img.length;
+	if(tot == 0) return doneLoading();
+
+	function imgLoaded(){
+	  c += 1;
+	  var perc = ((100/tot*c) << 0) +"%";
+	  prog.style.width = perc;
+	  stat.innerHTML = "Cargando.. "+ perc;
+	  if(c===tot) return doneLoading();
+	}
+	function doneLoading(){
+	  ovrl.style.opacity = 0;
+	  setTimeout(function(){ 
+	    ovrl.style.display = "none";
+	  }, 1200);
+	}
+	for(var i=0; i<tot; i++) {
+	  var tImg     = new Image();
+	  tImg.onload  = imgLoaded;
+	  tImg.onerror = imgLoaded;
+	  tImg.src     = img[i].src;
+	}    
+	}
+	document.addEventListener('DOMContentLoaded', loadbar, false);
+}());	
+
+//Jquery stuff
+
 jQuery(document).ready(function(){
 	var topControlIcon = jQuery ('.top-icon-menu, .shadow, .block-cart-header, .top-search, .page, body, .header-button');
 
@@ -13,9 +50,6 @@ jQuery(document).ready(function(){
 
   	var selected = jQuery('.product-options select'),
   		dt_items = jQuery('.product-options dt');
-
-
-
 
 	//Assign class acoording labels
 	dt_items.each(function(index, el) {
@@ -33,6 +67,22 @@ jQuery(document).ready(function(){
 				$this.next().addClass("cuadros-input");
 			}
 	});
+
+	//set bg carousel home
+
+	var carouselLists = jQuery('.carousel-container ul li.item.product');
+
+
+	carouselLists.each(function(index, el) {
+		//scope 
+		var $this = jQuery(this),
+			$thisThumb = $this.find('.inner-thumb'),
+			$thisImg = $thisThumb.data('thumb');
+
+			$thisThumb.css('background-image', 'url("'+$thisImg+'")');
+
+	});
+
 
 	//generate new containers
 	jQuery('.label-cuadros, .cuadros-input').wrapAll('<div class="container-cuadros"></div>');
@@ -418,6 +468,14 @@ jQuery(function () {
   }
  });
 
+ jQuery(window).load(function(){
+   // PAGE IS FULLY LOADED  
+   // FADE OUT YOUR OVERLAYING DIV
+   jQuery('body,html').stop(false, false).animate({
+	   scrollTop: 0
+	}, 50);
+});
+
  // scroll body to 0px on click
  jQuery('#back-top a').click(function () {
   jQuery('body,html').stop(false, false).animate({
@@ -471,7 +529,6 @@ jQuery(document).ready(function() {
 		jQuery('.slider-carousel').carouFredSel({
 			responsive: true,
 			width: '100%',
-			pagination:"#foo2_pag",
 			next:{
 				button: function() { var instance = jQuery(this).parent().parent().find(".home-carousel-control .carousel-next"); return instance},
 				key: 'right'

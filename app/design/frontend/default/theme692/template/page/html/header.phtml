@@ -77,3 +77,8 @@
 <?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home'  && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms' ) :  ?>
        <?php  echo ($this->getLayout()->createBlock('cms/block')->setBlockId('slider_1')->toHtml()); ?>
 <?php endif;  ?>
+
+<div id="overlay">
+  <div id="progstat"></div>
+  <div id="progress"></div>
+</div>
