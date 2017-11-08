@@ -15,12 +15,21 @@ p {margin: 0;}
 }
 .main-container .data-table .label {display: table-cell;}
 .main-container .radio, .main-container .checkbox {display: inline-block; margin-top: 0;}
-@media (min-width: 1450px) {
-.container {max-width: 1450px;width: 1450px;}}
+@media (min-width: 1450px) { 
+   .container {
+    max-width: 1450px;
+    width: 1450px;
+  }
+}
 @media only screen and (min-width: 768px) {
-span.toggle {display: none;}
-.footer-col-content,
+    span.toggle {display: none;}
+    .footer-col-content,
     .block .block-content,
-    .box-collateral-content {height: 100% !important;display: block !important;opacity: 1!important;}}
+    .box-collateral-content {
+      height: 100% !important;
+      display: block !important;
+      opacity: 1!important;
+    }
+}
 
 
