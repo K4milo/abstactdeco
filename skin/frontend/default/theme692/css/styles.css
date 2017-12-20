@@ -727,6 +727,10 @@ p.control input.checkbox, p.control input.radio {
   padding: 10px;
 }
 
+.contacts-index-index #contactForm .form-list label{
+  color: #4c4c4c;
+}
+
 #contactForm .form-list label {
   float: left;
   font-weight: bold;
@@ -2165,7 +2169,7 @@ img.lazy {
 }
 
 .block-cart-header:before {
-  content: "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¯ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº";
+  content: "ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¯ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº";
 }
 
 .block-cart-header .block-content {}

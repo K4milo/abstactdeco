@@ -1,0 +1,32 @@
+<!-- List all categories and their second level subcategories -->
+<div class="block block-list block-categories">
+    <div id="block-categories" class="block-title active">
+        <strong><span>Categorías</span></strong>
+    </div>
+<?php
+    $_helper = Mage::helper('catalog/category');
+    $categories = $_helper->getStoreCategories();
+
+    foreach ($categories as $_category) {
+        $category = Mage::getModel('catalog/category')->load($_category->getId());
+        $subcategories = $category->getChildrenCategories();
+        
+        $the_name = $this->htmlEscape($_category->getName());
+        ?>
+        <dl>
+            <dt><span class="head"><a href="/<?php echo strtolower($the_name); ?>.html"><?php echo $the_name; ?></a></span></dt>
+            <dd>
+                <ol>
+                    <?php
+                    foreach ($subcategories as $_subcategory) {
+                        echo '<li><a href="' . $_subcategory->getURL() . '">' . $_subcategory->getName() . '</a></li>';
+                    }
+                    ?>
+                </ol>
+            </dd>
+        </dl>
+        <?php
+
+    }
+    ?>
+</div>

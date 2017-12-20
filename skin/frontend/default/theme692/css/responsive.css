@@ -244,9 +244,10 @@
 	.box-up-sell .up-sell-carousel-none li .product-box {padding: 5px;}
 	.box-up-sell .up-sell-carousel-none li {width: 150px;}
 
-	.row-title {font-size: 28px; line-height: 28px; } 
+	.row-title {font-size: 28px;line-height: 28px;height: 68px;line-height: 22px !important;} 
 	.row-cat .content-center span {line-height: 30px; font-size: 16px;}
 	.row-cat .content-center {bottom: 15px;}
+	.img-hover {height: 211px;}
 	
 }
 @media only screen and (max-width: 767px) {
